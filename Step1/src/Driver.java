@@ -17,7 +17,24 @@ public class Driver {
         System.out.println(tokens.getNumberOfOnChannelTokens());
         for (int i = 0; i < tokens.getNumberOfOnChannelTokens(); i++){
             // correlates to the values in Little.tokens
-            System.out.print(i + ":" + tokens.get(i).getType() + " ");
+            if (tokens.get(i).getType() >= 0) {
+                System.out.println("Token Type: " + getName(tokens.get(i).getType()));
+                System.out.println("Value: " + tokens.get(i).getText());
+            }
+            // System.out.println(tokens.get(i).getText() + ":" + getName(tokens.get(i).getType()) + " ");
         }
+    }
+    public static String getName(int tokenType) {
+        switch (tokenType){
+            case 4: return "IDENTIFIER";
+            case 5: return "INTLITERAL";
+            case 6: return "FLOATLITERAL";
+            case 7: return "STRINGLITERAL";
+            case 8: return "COMMENT";
+            case 1: return "KEYWORD";
+            case 2: return "OP";
+            case 3: return "WS";
+        }
+        return "something went wrong";
     }
 }

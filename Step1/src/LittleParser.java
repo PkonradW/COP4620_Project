@@ -16,8 +16,8 @@ public class LittleParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		IDENTIFIER=1, INTLITERAL=2, FLOATLITERAL=3, STRINGLITERAL=4, COMMENT=5, 
-		KEYWORDS=6, OP=7, WS=8;
+		KEYWORDS=1, OP=2, WS=3, IDENTIFIER=4, INTLITERAL=5, FLOATLITERAL=6, STRINGLITERAL=7, 
+		COMMENT=8;
 	public static final int
 		RULE_prog = 0;
 	private static String[] makeRuleNames() {
@@ -34,8 +34,8 @@ public class LittleParser extends Parser {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "IDENTIFIER", "INTLITERAL", "FLOATLITERAL", "STRINGLITERAL", "COMMENT", 
-			"KEYWORDS", "OP", "WS"
+			null, "KEYWORDS", "OP", "WS", "IDENTIFIER", "INTLITERAL", "FLOATLITERAL", 
+			"STRINGLITERAL", "COMMENT"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -143,12 +143,12 @@ public class LittleParser extends Parser {
 			setState(5);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (((_la) & ~0x3f) == 0 && ((1L << _la) & 254L) != 0) {
+			while (((_la) & ~0x3f) == 0 && ((1L << _la) & 502L) != 0) {
 				{
 				{
 				setState(2);
 				_la = _input.LA(1);
-				if ( !(((_la) & ~0x3f) == 0 && ((1L << _la) & 254L) != 0) ) {
+				if ( !(((_la) & ~0x3f) == 0 && ((1L << _la) & 502L) != 0) ) {
 				_errHandler.recoverInline(this);
 				}
 				else {
@@ -178,11 +178,11 @@ public class LittleParser extends Parser {
 	public static final String _serializedATN =
 		"\u0004\u0001\b\t\u0002\u0000\u0007\u0000\u0001\u0000\u0005\u0000\u0004"+
 		"\b\u0000\n\u0000\f\u0000\u0007\t\u0000\u0001\u0000\u0000\u0000\u0001\u0000"+
-		"\u0000\u0001\u0001\u0000\u0001\u0007\b\u0000\u0005\u0001\u0000\u0000\u0000"+
-		"\u0002\u0004\u0007\u0000\u0000\u0000\u0003\u0002\u0001\u0000\u0000\u0000"+
-		"\u0004\u0007\u0001\u0000\u0000\u0000\u0005\u0003\u0001\u0000\u0000\u0000"+
-		"\u0005\u0006\u0001\u0000\u0000\u0000\u0006\u0001\u0001\u0000\u0000\u0000"+
-		"\u0007\u0005\u0001\u0000\u0000\u0000\u0001\u0005";
+		"\u0000\u0001\u0002\u0000\u0001\u0002\u0004\b\b\u0000\u0005\u0001\u0000"+
+		"\u0000\u0000\u0002\u0004\u0007\u0000\u0000\u0000\u0003\u0002\u0001\u0000"+
+		"\u0000\u0000\u0004\u0007\u0001\u0000\u0000\u0000\u0005\u0003\u0001\u0000"+
+		"\u0000\u0000\u0005\u0006\u0001\u0000\u0000\u0000\u0006\u0001\u0001\u0000"+
+		"\u0000\u0000\u0007\u0005\u0001\u0000\u0000\u0000\u0001\u0005";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
