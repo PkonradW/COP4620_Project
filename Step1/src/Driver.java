@@ -26,14 +26,14 @@ public class Driver {
     }
     public static String getName(int tokenType) {
         switch (tokenType){
+            case 1: return "KEYWORD";
+            case 2: return "OP";
+            case 3: return "WS";
             case 4: return "IDENTIFIER";
             case 5: return "INTLITERAL";
             case 6: return "FLOATLITERAL";
             case 7: return "STRINGLITERAL";
             case 8: return "COMMENT";
-            case 1: return "KEYWORD";
-            case 2: return "OP";
-            case 3: return "WS";
         }
         return "something went wrong";
     }
