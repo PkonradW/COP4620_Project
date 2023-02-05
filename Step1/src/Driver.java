@@ -8,6 +8,16 @@ public class Driver {
         @SuppressWarnings("deprecation") ANTLRInputStream input = new ANTLRInputStream(System.in);
         LittleLexer lexer = new LittleLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
+	
+        for (int i = 0; i < tokens.getNumberOfOnChannelTokens(); i++){
+            // correlates to the values in Little.tokens
+            if (tokens.get(i).getType() >= 0) {
+                System.out.println("Token Type: " + getName(tokens.get(i).getType()));
+                System.out.println("Value: " + tokens.get(i).getText());
+            }
+        }
+	
+        /*
         File file = new File("output.txt");
         try {
             FileWriter writer = new FileWriter(file);
@@ -26,8 +36,10 @@ public class Driver {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-
+       */ 
     }
+
+    
     public static String getName(int tokenType) {
         switch (tokenType) {
             case 1: return "KEYWORD";
