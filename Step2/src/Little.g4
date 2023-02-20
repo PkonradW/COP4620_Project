@@ -9,11 +9,11 @@ decl : string_decl decl
      | ;
 
 /* Global String Declaration */
-string_decl : 'STRING' id ':=' str ;
+string_decl : 'STRING' id ':=' str ';' ;
 str : STRINGLITERAL ;
 
 /* Variable Declaration */
-var_decl : var_type id_list ;
+var_decl : var_type id_list ';' ;
 var_type : 'FLOAT'
          | 'INT' ;
 any_type : var_type
@@ -47,11 +47,11 @@ base_stmt : assign_stmt
           | return_stmt ;
 
 /* Basic Statements */
-assign_stmt : assign_expr ;
+assign_stmt : assign_expr ';' ;
 assign_expr : id ':=' expr ;
-read_stmt : 'READ' '(' id_list ')' ;
-write_stmt : 'WRITE' '(' id_list ')' ;
-return_stmt : 'RETURN' expr ;
+read_stmt : 'READ' '(' id_list ')' ';' ;
+write_stmt : 'WRITE' '(' id_list ')' ';' ;
+return_stmt : 'RETURN' expr ';' ;
 
 /* Expressions */
 expr : expr_prefix factor ;
