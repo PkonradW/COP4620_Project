@@ -31,5 +31,3 @@ BEGIN
 		WRITE (x2);
 	END
 END
-
-

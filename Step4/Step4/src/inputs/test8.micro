@@ -8,8 +8,6 @@ BEGIN
 	FLOAT fx, dfx;
 	FLOAT error;
 	INT i;
-	FLOAT n;
-	FLOAT error;
 
 	--PROTO VOID main();
 
@@ -31,5 +29,3 @@ BEGIN
 		WRITE (x2);
 	END
 END
-
-

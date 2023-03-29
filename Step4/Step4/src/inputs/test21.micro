@@ -8,10 +8,6 @@ BEGIN
 	FLOAT fx, dfx;
 	FLOAT error;
 	INT i;
-	FLOAT n;
-	FLOAT error;
-
-	--PROTO VOID main();
 
 	FUNCTION VOID main()
 	BEGIN
@@ -21,15 +17,17 @@ BEGIN
 		dfx := 2.0*x1;
 		x2 := x1 - fx/dfx;
 
-	WHILE (x1-x2 >= error)
-		x1 := x2;
-		fx := x1*x1 - n;
-		dfx := 2.0*x1;
-		x2 := x1 - fx/dfx;
-	ENDWHILE
+		WHILE (x1-x2 >= error1)
+
+               INT error1;
+               error1 := error;
+			x1 := x2;
+			fx := x1*x1 - n;
+			dfx := 2.0*x1;
+			x2 := x1 - fx/dfx;
+
+		ENDWHILE
 
 		WRITE (x2);
 	END
 END
-
-
