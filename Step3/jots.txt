@@ -1,0 +1,15 @@
+making symbol table
+implement with hash table
+symboltab for each scope
+add as you see declarations
+can't use grammar actions
+tokens become leaves in parse tree - semantic record for a token is always the text associated with that token
+every symbol that shows up in a grammar becomes a leaf on the tree
+
+Scopes
+	GLOBAL for grlobe
+	BLOCK<x> for blocks
+	func scopes are same name as func
+	func params should be included as part of scope
+
+while->endwhile example of block

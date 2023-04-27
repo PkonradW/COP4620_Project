@@ -14,7 +14,7 @@ import java.io.*;
 
 public class SimpleTableBuilder extends LittleBaseListener{
     //ArrayList<HashMap<String, Symbol>> = new ArrayList;
-    public static ArrayList<SymbolTable> tableList = new ArrayList<>();
+    public ArrayList<SymbolTable> tableList = new ArrayList<>();
     public static SymbolTable global = new SymbolTable();
     // scope stack used to keeping track of which table to add variables to
     // (only add symbols to the topmost table in the stack)

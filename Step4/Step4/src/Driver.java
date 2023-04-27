@@ -25,12 +25,23 @@ public class Driver {
 
         ParseTreeWalker walker = new ParseTreeWalker () ;
         SimpleTableBuilder stb = new SimpleTableBuilder ();
+        //ASTbuilder atb = new ASTbuilder(stb.tableList);
+
+
         // Walk the tree created during the parse, trigger callbacks
         walker.walk(stb, tree);
         if (listener.getIsEmpty()){
+            System.out.println(stb.tableList.size());
+            ASTbuilder atb = new ASTbuilder(stb.tableList);
+            walker.walk(atb,tree);
             stb.prettyPrint();
+            for (AST ast: ASTbuilder.astList) {
+                AST.treePrint(ast.root);
+            }
+            //walker.walk(atb, tree);
         } else {
-            System.out.println(listener.stack);
+            System.out.println("uh oh" + listener.stack);
+
         }
 
     }
