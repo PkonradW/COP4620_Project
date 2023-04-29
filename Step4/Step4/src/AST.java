@@ -1,9 +1,15 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
 public class AST {
     ASTnode root;
     SymbolTable table;
     ASTnode currentRoot; // uppermost assignment node, or operator
     int register; // use to keep track of which register to use next
     int tempRegister;
+    static ArrayList<String> codelist = new ArrayList<>();
 
     public AST(ASTnode root, SymbolTable table) {
         this.root = root;
@@ -39,14 +45,15 @@ public class AST {
         else addNode.type = "sub";
 
         if (this.root == this.currentRoot
-            || this.currentRoot.type.equals("add")
-            || this.currentRoot.type.equals("sub")
+                || this.currentRoot.type.equals("add")
+                || this.currentRoot.type.equals("sub")
         ) { // if root is still assignment
             addNode.parent = this.currentRoot; // hook up addnode
             addNode.lChild = this.currentRoot.rChild;
             this.currentRoot.rChild.parent = addNode; //put terminal on addnode
             this.currentRoot.rChild = addNode;
             this.currentRoot = addNode;
+            addNode.dataType = addNode.lChild.dataType;
         }
     }
     private void mulInsert(ASTnode mulNode, String data) {
@@ -56,9 +63,15 @@ public class AST {
         if (data.equals("*")) mulNode.type = "mul";
         else mulNode.type = "div";
 
-        if (this.root == this.currentRoot) {
+        if (this.root == this.currentRoot
+                || this.currentRoot.type.equals("mul")
+                || this.currentRoot.type.equals("div")) {
             mulNode.parent = this.currentRoot;
             mulNode.lChild = this.currentRoot.rChild;
+            this.currentRoot.rChild.parent = mulNode;
+            this.currentRoot.rChild = mulNode;
+            this.currentRoot = mulNode;
+            mulNode.dataType = mulNode.lChild.dataType;
         }
     }
     // data is the variable name
@@ -87,13 +100,50 @@ public class AST {
             this.currentRoot.rChild = intNode;
         }
     }
-    public static void treePrint(ASTnode head) {
-        if (head.lChild != null){
-            treePrint(head.lChild);
+//    public static void treePrint(ASTnode head) {
+//        if (head.lChild != null){
+//            treePrint(head.lChild);
+//        }
+//        if (head.rChild != null) {
+//            treePrint(head.rChild);
+//        }
+//        head.printNode();
+//    }
+    public static void lolPrint() {
+        for (String code :
+                codelist) {
+            System.out.println(code);
+        }
+    }
+public static void irPrint(ASTnode head) {
+    try {
+        FileWriter fileWriter = new FileWriter("testicle.out", true);
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+
+        if (head.lChild != null) {
+            irPrint(head.lChild);
         }
         if (head.rChild != null) {
-            treePrint(head.rChild);
+            irPrint(head.rChild);
         }
-        head.printNode();
+        String type = head.type;
+        if (type.equals("assignment")
+                || type.equals("writelist")
+                || type.equals("readlist")
+                || type.equals("add")
+                || type.equals("sub")
+                || type.equals("div")
+                || type.equals("mul")) {
+            CodeObject obj = new CodeObject(head);
+            codelist.add(obj.result);
+            printWriter.println(obj.result);
+        }
+        printWriter.close();
+        fileWriter.close();
+    } catch (IOException e) {
+        System.out.println("An error occurred.");
+        e.printStackTrace();
     }
+}
+
 }

@@ -36,8 +36,9 @@ public class Driver {
             walker.walk(atb,tree);
             stb.prettyPrint();
             for (AST ast: ASTbuilder.astList) {
-                AST.treePrint(ast.root);
+                AST.irPrint(ast.root);
             }
+            AST.lolPrint();
             //walker.walk(atb, tree);
         } else {
             System.out.println("uh oh" + listener.stack);

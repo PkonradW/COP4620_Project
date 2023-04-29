@@ -42,8 +42,11 @@ public class ASTbuilder extends LittleBaseListener {
             }
         }
         ASTnode lSide = new ASTnode("id");
+        lSide.dataType = lSymbol.getType();
+        lSide.data = lSymbol.getName();
         lSide.id = lSymbol;
         assignRoot.lChild = lSide;
+        assignRoot.dataType = lSide.dataType;
         lSide.parent = assignRoot;
 //        if (ctx.expr().factor().factor_prefix().mulop()==null) {
 //            System.out.println("did not crash");
@@ -60,7 +63,7 @@ public class ASTbuilder extends LittleBaseListener {
         String name = ctx.id().IDENTIFIER().getText();
         currentTable = tableMap.get(name);
     }
-    // TODO make correct stack-based implementation
+    // TODO make correct stack-based implementation, hire an arborist for this abomination
     @Override public void exitFunc_decl(LittleParser.Func_declContext ctx) {
         System.out.println("got here " + ist++ + "st " + ctx.getText());
         currentTable = tableMap.get("GLOBAL");
@@ -76,13 +79,22 @@ public class ASTbuilder extends LittleBaseListener {
         nextIsPrimary = true;
         if (ctx.FLOATLITERAL() != null) {
             ASTnode floatLitNode = new ASTnode("float");
+            floatLitNode.dataType = "FLOAT";
             currentAST.insert(floatLitNode, ctx.FLOATLITERAL().getText());
         } else if (ctx.INTLITERAL() != null) {
             ASTnode intLitNode = new ASTnode("int");
+            intLitNode.dataType = "INT";
             currentAST.insert(intLitNode, ctx.INTLITERAL().getText());
         } else if (ctx.id() != null) {
             ASTnode idNode = new ASTnode("id");
+            if (currentTable.table.get(ctx.id().IDENTIFIER().getText()) != null) {
+                idNode.dataType = currentTable.table.get(ctx.id().IDENTIFIER().getText()).getType();
+            } else {
+                SymbolTable glob = tableMap.get("GLOBAL");
+                idNode.dataType = glob.table.get(ctx.id().IDENTIFIER().getText()).getType();
+            }
             currentAST.insert(idNode, ctx.id().IDENTIFIER().getText());
+
         }
     }
     @Override public void enterAddop(LittleParser.AddopContext ctx) {
@@ -100,5 +112,56 @@ public class ASTbuilder extends LittleBaseListener {
     public void exitPrimary(LittleParser.PrimaryContext ctx) {
         System.out.println("got here " + ist++ + "st " + ctx.getText());
         nextIsPrimary = false;
+    }
+    @Override public void enterWrite_stmt(LittleParser.Write_stmtContext ctx) {
+        ASTnode writeNode = new ASTnode("writelist");
+        AST writeTree = new AST(writeNode, currentTable);
+        astList.add(writeTree);
+        writeNode.list = new ArrayList<>();
+        writeNode.list.add(writeNode);
+        if (currentTable.table.get(ctx.id_list().id().IDENTIFIER().getText()) != null) {
+            writeNode.dataType = currentTable.table.get(ctx.id_list().id().IDENTIFIER().getText()).getType();
+            writeNode.data = currentTable.table.get(ctx.id_list().id().IDENTIFIER().getText()).getName();
+        } else {
+            SymbolTable glob = tableMap.get("GLOBAL");
+            writeNode.dataType = glob.table.get(ctx.id_list().id().IDENTIFIER().getText()).getType();
+            writeNode.data = glob.table.get(ctx.id_list().id().IDENTIFIER().getText()).getName();
+        }
+        if (ctx.id_list().id_tail().children!=null) {
+            recursiveWriteHandler(ctx.id_list().id_tail(), writeNode);
+        }
+    }
+    private void recursiveWriteHandler(LittleParser.Id_tailContext ctx, ASTnode head) {
+        ASTnode writeNode = new ASTnode("id");
+        if (currentTable.table.get(ctx.id().IDENTIFIER().getText()) != null) {
+            writeNode.dataType = currentTable.table.get(ctx.id().IDENTIFIER().getText()).getType();
+            writeNode.data = currentTable.table.get(ctx.id().IDENTIFIER().getText()).getName();
+        } else {
+            SymbolTable glob = tableMap.get("GLOBAL");
+            writeNode.dataType = glob.table.get(ctx.id().IDENTIFIER().getText()).getType();
+            writeNode.data = glob.table.get(ctx.id().IDENTIFIER().getText()).getName();
+        }
+        head.list.add(writeNode);
+        if (ctx.id_tail().children != null) {
+            recursiveWriteHandler( ctx.id_tail(), head);
+        }
+    }
+    @Override public void enterRead_stmt(LittleParser.Read_stmtContext ctx) {
+        ASTnode readNode = new ASTnode("readlist");
+        AST writeTree = new AST(readNode, currentTable);
+        astList.add(writeTree);
+        readNode.list = new ArrayList<>();
+        readNode.list.add(readNode);
+        if (currentTable.table.get(ctx.id_list().id().IDENTIFIER().getText()) != null) {
+            readNode.dataType = currentTable.table.get(ctx.id_list().id().IDENTIFIER().getText()).getType();
+            readNode.data = currentTable.table.get(ctx.id_list().id().IDENTIFIER().getText()).getName();
+        } else {
+            SymbolTable glob = tableMap.get("GLOBAL");
+            readNode.dataType = glob.table.get(ctx.id_list().id().IDENTIFIER().getText()).getType();
+            readNode.data = glob.table.get(ctx.id_list().id().IDENTIFIER().getText()).getName();
+        }
+        if (ctx.id_list().id_tail().children!=null) {
+            recursiveWriteHandler(ctx.id_list().id_tail(), readNode);
+        }
     }
 }
