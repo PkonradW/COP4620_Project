@@ -1,0 +1,16 @@
+PROGRAM moneyConversion
+BEGIN 
+	FLOAT a,b,c;
+	STRING message1 := "US DOLLAR TO EURO: ";
+	STRING message2 := "US DOLLAR TO KIP: ";
+	STRING newline := "\n";
+	FUNCTION VOID main()
+	BEGIN
+		READ (a);
+		b:= a * 0.92;
+		c:= a * 34340;
+		WRITE (message1, b, newline);
+WRITE (message2, c, newline);
+	END
+		
+END

@@ -1,0 +1,29 @@
+var feet
+var inches
+var cm
+var temp1
+var temp2
+str newline "\n"
+var convFeet
+var convInches
+move convInches r1
+move 2.54 r1
+move convFeet r2
+move 30.48 r2
+sys readr feet
+move feet r3
+sys readr inches
+move inches r4
+move temp1 r5
+move r2 r5
+mulr r3 r5
+move temp2 r6
+move r1 r6
+mulr r4 r6
+move cm r7
+move r5 r7
+addr r6 r7
+move r7 cm
+sys writer cm
+sys writes newline
+sys halt

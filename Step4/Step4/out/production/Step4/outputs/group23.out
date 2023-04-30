@@ -1,0 +1,19 @@
+var factor
+var result
+var input
+str messagea "Imperial fluid ounces:"
+str messageb "US fluid ounces:"
+str nl "\n"
+sys readr input
+move 1.0408423 r0
+move r0 factor
+move input r1
+divr factor r1
+move r1 result
+sys writes messagea
+sys writer input
+sys writes nl
+sys writes messageb
+sys writer result
+sys writes nl
+sys halt

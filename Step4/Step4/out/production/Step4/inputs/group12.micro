@@ -1,0 +1,25 @@
+PROGRAM g2qpcfl
+BEGIN
+        FLOAT gallons, quarts, pints, cups, flOz;
+        STRING newline := "\n"; 
+	STRING Text1 := "Enter in an amount of gallons: ";
+	STRING Text2 := "Number of quarts:";
+	STRING Text3 := "Number of pints:";
+	STRING Text4 := "Number of cups:";
+	STRING Text5 := "Number of fluid ounces";
+
+        FUNCTION VOID main()
+        BEGIN
+	WRITE(Text1);
+                READ(gallons);
+                quarts:= gallons*4;
+                pints:= gallons*8;
+                cups:=gallons*16;
+                flOz:=gallons*128;
+                WRITE(Text2,quarts,newline);
+	WRITE(Text3,pints,newline);
+	WRITE(Text4,cups,newline);
+	WRITE(Text5,flOz,newline);
+        END
+
+END

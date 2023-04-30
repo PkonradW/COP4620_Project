@@ -1,0 +1,24 @@
+PROGRAM convert_days_to_seconds
+BEGIN
+	FLOAT days, hoursPerDay, minutesPerHour, secondsPerMinute, seconds;
+	STRING prompt := "Enter number of days to convert to seconds:";
+	STRING output := "In seconds: ";
+	STRING newline := "\n";
+	FUNCTION VOID main()
+	BEGIN
+		WRITE(prompt);
+		WRITE(newline)
+		
+		READ(days);
+		
+		hoursPerDay := 24.0;
+		minutesPerHour := 60.0;
+		secondsPerMinute := 60.0;
+		seconds := days * hoursPerDay * minutesPerHour * secondsPerMinute;
+		
+		WRITE(output);
+		WRITE(seconds);
+		WRITE(newline);
+	END
+END
+		

@@ -1,0 +1,24 @@
+PROGRAM AreaHalfCircle
+BEGIN
+    FLOAT radius, big, height, act, fin, constPI;
+    STRING newline := "\n";
+    STRING question := "Enter the radius of your circle: ";
+    STRING answerPart := "The area of a semicircle with a radius of: ";
+    STRING answerFinal := " is: ";
+
+    FUNCTION VOID main() 
+    BEGIN
+        WRITE(question);
+        READ(radius);
+        constPI := 3.141592653589;
+        height := 0.5;
+        big :=  radius * radius;
+        act := big * constPI;
+        fin := act * height;
+        WRITE(newline);
+        WRITE(answerPart);
+        WRITE(radius);
+        WRITE(answerFinal);
+        WRITE(fin);
+    END
+END

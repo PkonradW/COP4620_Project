@@ -1,0 +1,32 @@
+var radius
+var big
+var height
+var act
+var fin
+var constPI
+str newline "\n"
+str question "Enter the radius of your circle: "
+str answerPart "The area of a semicircle with a radius of: "
+str answerFinal " is: "
+
+label main
+sys writes question
+sys readr radius
+move 3.141592653689 constPI
+move 0.5 height
+move radius r0
+mulr radius r0
+move r0 big
+mulr constPI r0
+move r0 act
+move height r1
+mulr r0 r1
+move r1 fin
+sys writes newline
+sys writes answerPart
+sys writer radius
+sys writes answerFinal
+sys writer fin
+jne main
+sys halt
+end

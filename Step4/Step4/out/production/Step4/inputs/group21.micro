@@ -1,0 +1,21 @@
+PROGRAM msToMph
+BEGIN
+        FLOAT m, mph, factor;
+        STRING newline := "\n";
+        STRING space := " ";
+        STRING equal := "=";
+        STRING mult := "*";
+        STRING prompt := "Enter Speed in m/s:\n";
+        STRING outputLn := "The conversion to mph is:";
+
+        FUNCTION VOID main()
+        BEGIN
+                WRITE(prompt);
+                READ(m);
+                factor:=2.237;
+                mph:=m*factor;
+                WRITE(outputLn);
+                WRITE(mph, equal, m, mult, factor, newline);
+        END
+
+END

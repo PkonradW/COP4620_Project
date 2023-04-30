@@ -1,0 +1,16 @@
+PROGRAM fractionToPercent
+BEGIN
+  FLOAT numerator;
+  FLOAT denominator;
+  FLOAT fraction;
+  FLOAT percent;
+  STRING newl := "%\n";
+  FUNCTION VOID main()
+  BEGIN
+    READ(numerator);
+    READ(denominator);
+    fraction := numerator / denominator;
+    percent := fraction * 100;
+    WRITE(percent, newl);
+  END
+END

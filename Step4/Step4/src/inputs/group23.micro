@@ -1,0 +1,16 @@
+PROGRAM usToImp
+BEGIN
+
+    FLOAT factor, result, input;
+    STRING messagea := "Imperial fluid ounces:";
+    STRING messageb := "US fluid ounces:";
+    STRING nl := "\n";
+
+    FUNCTION VOID main()
+    BEGIN
+        READ(input);
+        factor := 1.0408423;
+        result := input / factor;
+        WRITE(messagea, input, nl, messageb, result, nl);
+    END
+END

@@ -1,0 +1,22 @@
+var a
+var b
+var c
+str message1 "US DOLLAR TO EURO: "
+str message2 "US DOLLAR TO KIP: "
+str newline "\n"
+sys readr a
+move 0.92 r0
+move a r1
+mulr r0 r1
+move r1 b
+move 34340 r2
+move a r3
+mulr r2 r3
+move r3 c
+sys writes message1
+sys writer b
+sys writes newline
+sys writes message2
+sys writer c
+sys writes newline
+sys halt

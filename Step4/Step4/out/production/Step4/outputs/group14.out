@@ -1,0 +1,26 @@
+var mis
+var yds
+var ft
+str newline "\n"
+str miles " miles is:"
+str yards " yards"
+str feet " feet"
+sys readi mis
+move 1760 r0
+move mis r1
+muli r0 r1
+move r1 yds
+move 5280 r2
+move mis r3
+muli r2 r3
+move r3 ft
+sys writei mis
+sys writes miles
+sys writes newline
+sys writei yds
+sys writes yards
+sys writes newline
+sys writei ft
+sys writes feet
+sys writes newline
+sys halt

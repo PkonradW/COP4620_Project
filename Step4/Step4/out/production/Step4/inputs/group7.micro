@@ -1,0 +1,17 @@
+PROGRAM bmi
+BEGIN
+        FLOAT weight, height, bmi, t1, t2, const;
+        STRING newline := "\n";
+
+        FUNCTION VOID main()
+        BEGIN
+                READ(weight);
+                READ(height);
+                const:= 703;
+                t1:= height * height;
+                t2:= weight * 703;
+                bmi:= t2 / t1;
+                WRITE(bmi, newline);
+        END
+
+END

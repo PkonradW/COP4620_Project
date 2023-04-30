@@ -29,7 +29,6 @@ public class ASTbuilder extends LittleBaseListener {
         ASTnode assignRoot = new ASTnode("assignment");
         AST tree = new AST(assignRoot, currentTable);
         currentAST = tree;
-        System.out.println("got here " + ist++ + "st " + ctx.getText());
 
 
         String idValue = ctx.id().IDENTIFIER().getText();
@@ -54,18 +53,15 @@ public class ASTbuilder extends LittleBaseListener {
 //        }
     }
     @Override public void exitAssign_stmt(LittleParser.Assign_stmtContext ctx) {
-        System.out.println("got here " + ist++ + "st " + ctx.getText());
         astList.add(currentAST);
     }
 
     @Override public void enterFunc_decl(LittleParser.Func_declContext ctx) {
-        System.out.println("got here " + ist++ + "st " + ctx.getText());
         String name = ctx.id().IDENTIFIER().getText();
         currentTable = tableMap.get(name);
     }
     // TODO make correct stack-based implementation, hire an arborist for this abomination
     @Override public void exitFunc_decl(LittleParser.Func_declContext ctx) {
-        System.out.println("got here " + ist++ + "st " + ctx.getText());
         currentTable = tableMap.get("GLOBAL");
     }
 
@@ -75,7 +71,6 @@ public class ASTbuilder extends LittleBaseListener {
      * @param ctx the parse tree
      */
     @Override public void enterPrimary(LittleParser.PrimaryContext ctx) {
-        System.out.println("got here " + ist++ + "st " + ctx.getText());
         nextIsPrimary = true;
         if (ctx.FLOATLITERAL() != null) {
             ASTnode floatLitNode = new ASTnode("float");
@@ -98,19 +93,16 @@ public class ASTbuilder extends LittleBaseListener {
         }
     }
     @Override public void enterAddop(LittleParser.AddopContext ctx) {
-        System.out.println("got here " + ist++ + "st " + ctx.getText());
         ASTnode addNode = new ASTnode("addop");
         currentAST.insert(addNode, ctx.getText());
     }
     @Override public void enterMulop(LittleParser.MulopContext ctx) {
-        System.out.println("got here " + ist++ + "st " + ctx.getText());
         ASTnode mulNode = new ASTnode("mulop");
         currentAST.insert(mulNode, ctx.getText());
     }
 
     @Override
     public void exitPrimary(LittleParser.PrimaryContext ctx) {
-        System.out.println("got here " + ist++ + "st " + ctx.getText());
         nextIsPrimary = false;
     }
     @Override public void enterWrite_stmt(LittleParser.Write_stmtContext ctx) {

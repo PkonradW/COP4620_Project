@@ -1,0 +1,31 @@
+;IR code
+;LABEL main
+;LINK
+;READF numerator
+;READF denominator
+;DIVF numerator denominator $T1
+;STOREF $T1 fraction
+;MULTF fraction 100 $T2
+;STOREF $T2 percent
+;WRITEF percent
+;WRITES newl
+;RET
+;tiny code
+var numerator
+var denominator
+var fraction
+var percent
+str newl "\n"
+sys readr numerator
+sys readr denominator
+move numerator r0
+divr denominator r0
+move r0 fraction
+move 100 r1
+move fraction r2
+mulr r1 r2
+move r2 percent
+sys writer percent
+sys writes newl
+sys halt
+

@@ -1,0 +1,14 @@
+var a
+var b
+var c
+str newline "\n"
+sys readr c
+move 3.14159 r0
+mulr c r0
+move r0 a
+move a r1
+mulr c r1
+move r1 b
+sys writer b
+sys writes newline
+sys halt

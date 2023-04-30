@@ -1,0 +1,30 @@
+var days
+var hoursPerDay
+var minutesPerHour
+var secondsPerMinute
+var seconds
+str prompt "Enter number of days to convert to seconds:"
+str output "In seconds: "
+str newline "\n"
+
+sys writes prompt
+sys writes newline
+
+sys readr days 
+
+move 24.0 hoursPerDay
+move 60.0 minutesPerHour
+move 60.0 secondsPerMinute
+
+move days r0 
+mulr hoursPerDay r0
+mulr minutesPerHour r0
+mulr secondsPerMinute r0
+move r0 seconds
+
+sys writes output
+sys writer seconds
+sys writes newline
+
+sys halt
+end

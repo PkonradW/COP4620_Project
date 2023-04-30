@@ -1,0 +1,13 @@
+PROGRAM ft2m
+BEGIN 
+	FLOAT ft, m, const;
+	STRING newline := "\n";
+
+	FUNCTION VOID main()
+	BEGIN
+		READ(ft);
+		const := 0.3048;
+		m := ft/const;
+		WRITE(m, newline);
+	END
+END

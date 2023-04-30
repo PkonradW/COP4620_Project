@@ -1,10 +1,7 @@
 Symbol table GLOBAL
-name a type INT
-name b type INT
-name c type INT
-name d type INT
-name e type INT
-name f type INT
+name i type FLOAT
+name c type FLOAT
+name const type FLOAT
 name newline type STRING value "\n"
 
 Symbol table main

@@ -1,16 +1,6 @@
-STORI 1 a
-STORI 2 b
-READI c
-READI d
-MULI a c $T0
-STORI $T0 e
-MULI b d $T1
-STORI $T1 f
-ADDI e f $T2
-STORI $T2 e
-WRITEI c
-WRITES newline
-WRITEI d
-WRITES newline
-WRITEI e
+READF i
+STOREF 2.54 const
+MULF i const $T0
+STOREF $T0 c
+WRITEF c
 WRITES newline

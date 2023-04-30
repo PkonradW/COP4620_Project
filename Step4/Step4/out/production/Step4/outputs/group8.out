@@ -1,0 +1,12 @@
+var i
+var c
+var const
+str newline "\n"
+sys readr i
+move 2.54 r0
+move r0 const
+move i r1
+muli const r1
+move r1 c
+sys writer c
+sys writes newline

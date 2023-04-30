@@ -1,0 +1,17 @@
+PROGRAM remainder
+BEGIN
+	FLOAT a, b, c, d;
+	STRING newline := "\n";
+	STRING w := "Enter weight in Kilogram: ";
+	
+	FUNCTION VOID main()
+	BEGIN
+		a := 9.81;
+		b := 1.62;
+		WRITE(w, newline);
+		READ(c);
+		a := c/a;
+		d := a*b;
+		WRITE(d, newline);
+	END
+END				

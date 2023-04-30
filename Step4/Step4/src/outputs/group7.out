@@ -1,0 +1,25 @@
+var weight
+var height
+var bmi
+var t1
+var t2
+var const
+str newline "\n"
+sys readr weight
+sys readr height
+move 703 r0
+move r0 const
+move height r1
+mulr height r1
+move r1 t1
+move 703 r2
+move weight r3
+mulr r2 r3
+move r3 t2
+move t2 r4
+divr t1 r4
+move r4 bmi
+sys writer bmi
+sys writes newline
+sys halt
+

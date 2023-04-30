@@ -1,0 +1,28 @@
+var m
+var mph
+var factor
+str newline "\n"
+str space " "
+str equal "="
+str mult "*"
+str prompt "Enter Speed in m/s:\n"
+str outputLn "The conversion to mph is: \n"
+sys writes prompt
+sys readr m
+move 2.237 r0
+move r0 factor
+move m r1
+mulr factor r1
+move r1 mph
+sys writes outputLn
+sys writer mph
+sys writes space
+sys writes equal
+sys writes space
+sys writer m
+sys writes space
+sys writes mult
+sys writes space
+sys writer factor
+sys writes newline
+sys halt

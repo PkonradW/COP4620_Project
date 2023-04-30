@@ -1,0 +1,17 @@
+PROGRAM sphereVolume
+BEGIN
+        FLOAT f, c, t1, t2, const;
+        STRING newline := "\n";
+
+        FUNCTION VOID main()
+        BEGIN
+                READ(f);
+                t1 := 3.14 * f;
+                t1 := t1 * f;
+                t1 := t1 * f;
+                const := 4.0;
+                t2 := const / 3.0;
+                c := t1 * t2;
+                WRITE(c, newline);
+        END
+END

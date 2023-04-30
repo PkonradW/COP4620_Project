@@ -1,0 +1,21 @@
+PROGRAM miles
+BEGIN
+
+	INT mis,yds,ft;
+	STRING newline := "\n";
+	STRING miles := " miles is:";
+	STRING yards :=" yards";
+	STRING feet := " feet";
+
+	FUNCTION VOID main()
+	BEGIN
+
+           READ(mis);
+
+           yds := mis * 1760;
+           ft := mis * 5280;
+
+           WRITE(mis, miles, newline, yds, yards, newline, ft, feet, newline);
+
+	END	
+END

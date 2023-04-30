@@ -1,0 +1,14 @@
+PROGRAM areacircle
+BEGIN
+
+	FLOAT a,b,c;
+	STRING newline := "\n";
+
+	FUNCTION VOID main()
+	BEGIN
+          	READ(c);
+	    	a := 3.14159 * c;
+	    	b := a * c;
+          	WRITE(b, newline);
+	END	
+END

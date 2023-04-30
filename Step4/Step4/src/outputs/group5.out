@@ -1,0 +1,14 @@
+var ft
+var m
+var const
+str newline "\n"
+sys readr ft
+move 0.3048 r0
+move r0 const
+move ft r1
+move const r2
+divr r1 r2
+move r2 m
+sys writer m
+sys writes newline
+sys halt

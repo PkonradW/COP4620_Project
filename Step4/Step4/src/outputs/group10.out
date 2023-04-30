@@ -1,0 +1,18 @@
+var d
+var x
+var a
+var p
+str newline "\n"
+sys readr d
+move d r0
+muli d r0
+move r0 x
+move 3.14 r1
+move r1 p
+move p r2
+muli x r2
+move r2 a
+sys writer a
+sys writes newline
+sys halt
+end

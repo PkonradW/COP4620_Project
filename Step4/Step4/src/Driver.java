@@ -31,14 +31,25 @@ public class Driver {
         // Walk the tree created during the parse, trigger callbacks
         walker.walk(stb, tree);
         if (listener.getIsEmpty()){
-            System.out.println(stb.tableList.size());
+            //System.out.println(stb.tableList.size());
             ASTbuilder atb = new ASTbuilder(stb.tableList);
             walker.walk(atb,tree);
             stb.prettyPrint();
             for (AST ast: ASTbuilder.astList) {
                 AST.irPrint(ast.root);
             }
-            AST.lolPrint();
+            for (String line :
+                    AST.codelist) {
+                System.out.println(";" + line);
+            }
+            IRtoTiny.symbolDump(stb.tableList);
+            IRtoTiny.process(AST.codelist);
+            IRtoTiny.makeTinyFile();
+            for (String line :
+                    IRtoTiny.tinyList) {
+                System.out.println(line);
+            }
+            System.out.println("sys halt");
             //walker.walk(atb, tree);
         } else {
             System.out.println("uh oh" + listener.stack);

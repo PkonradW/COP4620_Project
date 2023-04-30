@@ -1,0 +1,14 @@
+PROGRAM i2c
+BEGIN
+        FLOAT i, c, const;
+        STRING newline := "\n";
+
+        FUNCTION VOID main()
+        BEGIN
+                READ(i);
+                const:=2.54;
+                c:=i*const;
+                WRITE(c, newline);
+        END
+
+END

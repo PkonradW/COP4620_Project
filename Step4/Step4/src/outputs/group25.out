@@ -1,0 +1,22 @@
+var a
+var b
+var c
+var d
+str newline "\n"
+str w "Enter weight in Kilogram: "
+move 9.81 r1
+move r1 a
+move 1.62 r2
+move r2 b
+sys writes w
+sys writes newline
+sys readr c
+move c r3
+divr a r3
+move r3 a
+move a r4
+mulr b r4
+move r4 d
+sys writer d
+sys writes newline
+sys halt

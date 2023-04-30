@@ -2,6 +2,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class AST {
     ASTnode root;
@@ -57,7 +58,6 @@ public class AST {
         }
     }
     private void mulInsert(ASTnode mulNode, String data) {
-        System.out.println("in mulnode, node.type: " + mulNode.type);
         mulNode.data = data;
 
         if (data.equals("*")) mulNode.type = "mul";
@@ -135,8 +135,14 @@ public static void irPrint(ASTnode head) {
                 || type.equals("div")
                 || type.equals("mul")) {
             CodeObject obj = new CodeObject(head);
-            codelist.add(obj.result);
-            printWriter.println(obj.result);
+            String codeBlock = obj.result;
+            Scanner scan = new Scanner(codeBlock);
+            while (scan.hasNextLine()) {
+                String singleLine = scan.nextLine();
+                codelist.add(singleLine);
+                printWriter.println(singleLine);
+            }
+            //printWriter.println(obj.result);
         }
         printWriter.close();
         fileWriter.close();

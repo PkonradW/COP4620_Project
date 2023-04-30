@@ -1,0 +1,39 @@
+var gallons
+var quarts
+var pints
+var cups
+var flOz
+str newline "\n"
+str text1 "Enter in an amount of gallons: "
+str text2 "Number of quarts:"
+str text3 "Number of pints:"
+str text4 "Number of cups:"
+str text5 "Number of fluid ounces"
+sys writes text1
+sys readr gallons
+move gallons r0
+muli 4 r0
+move r0 quarts
+move gallons r1
+muli 8 r1
+move r1 pints
+move gallons r2
+muli 16 r2
+move r2 cups
+move gallons r3
+muli 128 r3
+move r3 flOz
+sys writes text2
+sys writer quarts
+sys writes newline
+sys writes text3
+sys writer pints
+sys writes newline
+sys writes text4
+sys writer cups
+sys writes newline
+sys writes text5
+sys writer flOz
+sys writes newline
+sys halt
+end

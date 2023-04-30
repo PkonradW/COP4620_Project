@@ -108,7 +108,7 @@ public class CodeObject {
             operand = node.rChild.data;
         }
         node.resultVar = resultVar;
-        obj.result = "STORI " + operand + " " + resultVar;
+        obj.result = "STOREI " + operand + " " + resultVar;
     }
     private static void makeStorfNode(CodeObject obj, ASTnode node) {
         String resultVar = node.lChild.data;
@@ -119,7 +119,7 @@ public class CodeObject {
             operand = node.rChild.data;
         }
         node.resultVar = resultVar;
-        obj.result = "STORF " + operand + " " + resultVar;
+        obj.result = "STOREF " + operand + " " + resultVar;
     }
     private static void makeAddfNode(CodeObject obj, ASTnode node) {
         String lCode = node.lChild.data;

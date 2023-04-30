@@ -1,0 +1,15 @@
+PROGRAM calcArea
+BEGIN
+        FLOAT d, x, a, p;
+        STRING newline := "\n";
+
+        FUNCTION VOID main()
+        BEGIN
+                READ(d);
+                x:= d*d;
+                p:=3.14;
+                a:=p*x;
+                WRITE(a, newline);
+        END
+
+END
