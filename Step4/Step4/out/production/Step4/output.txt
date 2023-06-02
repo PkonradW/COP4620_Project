@@ -1,10 +1,9 @@
 Symbol table GLOBAL
-name a type INT
-name b type INT
-name c type INT
-name d type INT
-name e type INT
-name f type INT
-name newline type STRING value "\n"
+name factor type FLOAT
+name result type FLOAT
+name input type FLOAT
+name messagea type STRING value "Imperial fluid ounces:"
+name messageb type STRING value "US fluid ounces:"
+name nl type STRING value "\n"
 
 Symbol table main

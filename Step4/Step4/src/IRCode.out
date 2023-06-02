@@ -1,0 +1,717 @@
+READF i
+STOREF 2.54 const
+MULF i const $T0
+STOREF $T0 c
+WRITEF c
+WRITES newline
+WRITES greeting
+WRITES nl
+WRITES inputPrompt
+WRITES nl
+READI horsePower
+DIVI horsePower 14.9 $T0
+STOREF $T0 horses
+WRITES withString
+WRITEI horsePower
+WRITES horsePowerString
+WRITEF horses
+WRITES horsesString
+STOREF 1.0 x
+STOREF 2.0 y
+STOREF 3.14159 z
+WRITEF x
+WRITES newline
+WRITEF z
+WRITES newline
+WRITEF y
+WRITES newline
+DIVF z 2.0 $T0
+STOREF $T0 x
+DIVF z y $T1
+STOREF $T1 y
+WRITEF x
+WRITES newline
+WRITEF y
+WRITES newline
+ADDF x y $T2
+STOREF $T2 t
+WRITEF t
+WRITES newline
+STOREF 1.0 x
+STOREF 2.0 y
+STOREF 3.14159 z
+WRITEF x
+WRITES newline
+WRITEF z
+WRITES newline
+WRITEF y
+WRITES newline
+DIVF z 2.0 $T0
+STOREF $T0 x
+DIVF z y $T1
+STOREF $T1 y
+WRITEF x
+WRITES newline
+WRITEF y
+WRITES newline
+ADDF x y $T2
+STOREF $T2 t
+WRITEF t
+WRITES newline
+STOREF 1.0 x
+STOREF 2.0 y
+STOREF 3.14159 z
+WRITEF x
+WRITES newline
+WRITEF z
+WRITES newline
+WRITEF y
+WRITES newline
+DIVF z 2.0 $T0
+STOREF $T0 x
+DIVF z y $T1
+STOREF $T1 y
+WRITEF x
+WRITES newline
+WRITEF y
+WRITES newline
+ADDF x y $T2
+STOREF $T2 t
+WRITEF t
+WRITES newline
+STOREF 1.0 x
+STOREF 2.0 y
+STOREF 3.14159 z
+WRITEF x
+WRITES newline
+WRITEF z
+WRITES newline
+WRITEF y
+WRITES newline
+DIVF z 2.0 $T0
+STOREF $T0 x
+DIVF z y $T1
+STOREF $T1 y
+WRITEF x
+WRITES newline
+WRITEF y
+WRITES newline
+ADDF x y $T2
+STOREF $T2 t
+WRITEF t
+WRITES newline
+STOREF 1.0 x
+STOREF 2.0 y
+STOREF 3.14159 z
+WRITEF x
+WRITES newline
+WRITEF z
+WRITES newline
+WRITEF y
+WRITES newline
+DIVF z 2.0 $T0
+STOREF $T0 x
+DIVF z y $T1
+STOREF $T1 y
+WRITEF x
+WRITES newline
+WRITEF y
+WRITES newline
+ADDF x y $T2
+STOREF $T2 t
+WRITEF t
+WRITES newline
+STOREF 1.0 x
+STOREF 2.0 y
+STOREF 3.14159 z
+WRITEF x
+WRITES newline
+WRITEF z
+WRITES newline
+WRITEF y
+WRITES newline
+DIVF z 2.0 $T0
+STOREF $T0 x
+DIVF z y $T1
+STOREF $T1 y
+WRITEF x
+WRITES newline
+WRITEF y
+WRITES newline
+ADDF x y $T2
+STOREF $T2 t
+WRITEF t
+WRITES newline
+WRITES greeting
+WRITES nl
+WRITES inputPrompt
+WRITES nl
+READF horsePower
+DIVF horsePower 14.9 $T0
+STOREF $T0 horses
+WRITES withString
+WRITEF horsePower
+WRITES horsePowerString
+WRITEF horses
+WRITES horsesString
+READF input
+STOREF 1.0408423 factor
+DIVF input factor $T0
+STOREF $T0 result
+WRITES messagea
+WRITEF input
+WRITES nl
+WRITES messageb
+WRITEF result
+WRITES nl
+STOREF 1.0 x
+STOREF 2.0 y
+STOREF 3.14159 z
+WRITEF x
+WRITES newline
+WRITEF z
+WRITES newline
+WRITEF y
+WRITES newline
+DIVF z 2.0 $T0
+STOREF $T0 x
+DIVF z y $T1
+STOREF $T1 y
+WRITEF x
+WRITES newline
+WRITEF y
+WRITES newline
+ADDF x y $T2
+STOREF $T2 t
+WRITEF t
+WRITES newline
+READF input
+STOREF 1.0408423 factor
+DIVF input factor $T0
+STOREF $T0 result
+WRITES messagea
+WRITEF input
+WRITES nl
+WRITES messageb
+WRITEF result
+WRITES nl
+STOREF 2.54 convInches
+STOREF 30.48 convFeet
+READF feet
+READF inches
+MULF convFeet feet $T0
+STOREF $T0 temp1
+MULF convInches inches $T1
+STOREF $T1 temp2
+ADDF temp1 temp2 $T2
+STOREF $T2 cm
+WRITEF cm
+WRITES newline
+WRITES greeting
+WRITES nl
+WRITES inputPrompt
+WRITES nl
+READF horsePower
+DIVF horsePower 14.9 $T0
+STOREF $T0 horses
+WRITES withString
+WRITEF horsePower
+WRITES horsePowerString
+WRITEF horses
+WRITES horsesString
+READF ft
+STOREF 0.3048 const
+DIVF ft const $T0
+STOREF $T0 m
+WRITEF m
+WRITES newline
+READF weight
+READF height
+STOREF 703 const
+MULF height height $T0
+STOREF $T0 t1
+MULF weight 703 $T1
+STOREF $T1 t2
+DIVF t2 t1 $T2
+STOREF $T2 bmi
+WRITEF bmi
+WRITES newline
+READF i
+STOREF 2.54 const
+MULF i const $T0
+STOREF $T0 c
+WRITEF c
+WRITES newline
+READF d
+MULF d d $T0
+STOREF $T0 x
+STOREF 3.14 p
+MULF p x $T1
+STOREF $T1 a
+WRITEF a
+WRITES newline
+WRITES question
+READF radius
+STOREF 3.141592653589 constPI
+STOREF 0.5 height
+MULF radius radius $T0
+STOREF $T0 big
+MULF big constPI $T1
+STOREF $T1 act
+MULF act height $T2
+STOREF $T2 fin
+WRITES newline
+WRITES answerPart
+WRITEF radius
+WRITES answerFinal
+WRITEF fin
+WRITES Text1
+READF gallons
+MULF gallons 4 $T0
+STOREF $T0 quarts
+MULF gallons 8 $T1
+STOREF $T1 pints
+MULF gallons 16 $T2
+STOREF $T2 cups
+MULF gallons 128 $T3
+STOREF $T3 flOz
+WRITES Text2
+WRITEF quarts
+WRITES newline
+WRITES Text3
+WRITEF pints
+WRITES newline
+WRITES Text4
+WRITEF cups
+WRITES newline
+WRITES Text5
+WRITEF flOz
+WRITES newline
+READI mis
+MULI mis 1760 $T0
+STOREI $T0 yds
+MULI mis 5280 $T1
+STOREI $T1 ft
+WRITEI mis
+WRITES miles
+WRITES newline
+WRITEI yds
+WRITES yards
+WRITES newline
+WRITEI ft
+WRITES feet
+WRITES newline
+READF a
+MULF a 0.92 $T0
+STOREF $T0 b
+MULF a 34340 $T1
+STOREF $T1 c
+WRITES message1
+WRITEF b
+WRITES newline
+WRITES message2
+WRITEF c
+WRITES newline
+READF f
+MULF 3.14 f $T0
+STOREF $T0 t1
+MULF t1 f $T1
+STOREF $T1 t1
+MULF t1 f $T2
+STOREF $T2 t1
+STOREF 4.0 const
+DIVF const 3.0 $T3
+STOREF $T3 t2
+MULF t1 t2 $T4
+STOREF $T4 c
+WRITEF c
+WRITES newline
+READF numerator
+READF denominator
+DIVF numerator denominator $T0
+STOREF $T0 fraction
+MULF fraction 100 $T1
+STOREF $T1 percent
+WRITEF percent
+WRITES newl
+READF c
+MULF 3.14159 c $T0
+STOREF $T0 a
+MULF a c $T1
+STOREF $T1 b
+WRITEF b
+WRITES newline
+STOREF 3.14159 PI
+STOREF 200.0 const
+STOREF 180.0 const2
+WRITES c
+WRITES newline
+READF f
+MULF f PI $T0
+STOREF $T0 t1
+DIVF t1 const2 $T1
+STOREF $T1 ra
+DIVF const PI $T2
+STOREF $T2 t2
+MULF ra t2 $T3
+STOREF $T3 g
+WRITES o1
+WRITEF f
+WRITES newline
+WRITES o2
+WRITEF ra
+WRITES newline
+WRITES o3
+WRITEF g
+WRITES newline
+WRITES prompt
+READF m
+STOREF 2.237 factor
+MULF m factor $T0
+STOREF $T0 mph
+WRITES outputLn
+WRITEF mph
+WRITES equal
+WRITEF m
+WRITES mult
+WRITEF factor
+WRITES newline
+READF input
+STOREF 1.0408423 factor
+DIVF input factor $T0
+STOREF $T0 result
+WRITES messagea
+WRITEF input
+WRITES nl
+WRITES messageb
+WRITEF result
+WRITES nl
+STOREF 9.81 a
+STOREF 1.62 b
+WRITES w
+WRITES newline
+READF c
+DIVF c a $T0
+STOREF $T0 a
+MULF a b $T1
+STOREF $T1 d
+WRITEF d
+WRITES newline
+STOREI 1 a
+STOREI 2 b
+READI c
+READI d
+MULI a c $T0
+STOREI $T0 e
+MULI b d $T1
+STOREI $T1 f
+ADDI e f $T2
+STOREI $T2 e
+WRITEI c
+WRITES newline
+WRITEI d
+WRITES newline
+WRITEI e
+WRITES newline
+STOREI 20 a
+STOREI 30 b
+STOREI 40 c
+SUBI a b $T0
+STOREI $T0 c
+MULI b b $T1
+STOREI $T1 b
+ADDI b a $T2
+STOREI $T2 b
+MULI b a $T3
+STOREI $T3 d
+DIVI d a $T4
+STOREI $T4 a
+WRITEI c
+WRITEI b
+WRITEI a
+STOREF 1.0 x
+STOREF 2.0 y
+STOREF 3.14159 z
+WRITEF x
+WRITES newline
+WRITEF z
+WRITES newline
+WRITEF y
+WRITES newline
+DIVF z 2.0 $T0
+STOREF $T0 x
+DIVF z y $T1
+STOREF $T1 y
+WRITEF x
+WRITES newline
+WRITEF y
+WRITES newline
+ADDF x y $T2
+STOREF $T2 t
+WRITEF t
+WRITES newline
+STOREF 2.54 convInches
+STOREF 30.48 convFeet
+READF feet
+READF inches
+MULF convFeet feet $T0
+STOREF $T0 temp1
+MULF convInches inches $T1
+STOREF $T1 temp2
+ADDF temp1 temp2 $T2
+STOREF $T2 cm
+WRITEF cm
+WRITES newline
+WRITES greeting
+WRITES nl
+WRITES inputPrompt
+WRITES nl
+READF horsePower
+DIVF horsePower 14.9 $T0
+STOREF $T0 horses
+WRITES withString
+WRITEF horsePower
+WRITES horsePowerString
+WRITEF horses
+WRITES horsesString
+READF ft
+STOREF 0.3048 const
+DIVF ft const $T0
+STOREF $T0 m
+WRITEF m
+WRITES newline
+READF weight
+READF height
+STOREF 703 const
+MULF height height $T0
+STOREF $T0 t1
+MULF weight 703 $T1
+STOREF $T1 t2
+DIVF t2 t1 $T2
+STOREF $T2 bmi
+WRITEF bmi
+WRITES newline
+READF i
+STOREF 2.54 const
+MULF i const $T0
+STOREF $T0 c
+WRITEF c
+WRITES newline
+READF d
+MULF d d $T0
+STOREF $T0 x
+STOREF 3.14 p
+MULF p x $T1
+STOREF $T1 a
+WRITEF a
+WRITES newline
+WRITES question
+READF radius
+STOREF 3.141592653589 constPI
+STOREF 0.5 height
+MULF radius radius $T0
+STOREF $T0 big
+MULF big constPI $T1
+STOREF $T1 act
+MULF act height $T2
+STOREF $T2 fin
+WRITES newline
+WRITES answerPart
+WRITEF radius
+WRITES answerFinal
+WRITEF fin
+WRITES Text1
+READF gallons
+MULF gallons 4 $T0
+STOREF $T0 quarts
+MULF gallons 8 $T1
+STOREF $T1 pints
+MULF gallons 16 $T2
+STOREF $T2 cups
+MULF gallons 128 $T3
+STOREF $T3 flOz
+WRITES Text2
+WRITEF quarts
+WRITES newline
+WRITES Text3
+WRITEF pints
+WRITES newline
+WRITES Text4
+WRITEF cups
+WRITES newline
+WRITES Text5
+WRITEF flOz
+WRITES newline
+READI mis
+MULI mis 1760 $T0
+STOREI $T0 yds
+MULI mis 5280 $T1
+STOREI $T1 ft
+WRITEI mis
+WRITES miles
+WRITES newline
+WRITEI yds
+WRITES yards
+WRITES newline
+WRITEI ft
+WRITES feet
+WRITES newline
+READF a
+MULF a 0.92 $T0
+STOREF $T0 b
+MULF a 34340 $T1
+STOREF $T1 c
+WRITES message1
+WRITEF b
+WRITES newline
+WRITES message2
+WRITEF c
+WRITES newline
+READF f
+MULF 3.14 f $T0
+STOREF $T0 t1
+MULF t1 f $T1
+STOREF $T1 t1
+MULF t1 f $T2
+STOREF $T2 t1
+STOREF 4.0 const
+DIVF const 3.0 $T3
+STOREF $T3 t2
+MULF t1 t2 $T4
+STOREF $T4 c
+WRITEF c
+WRITES newline
+READF numerator
+READF denominator
+DIVF numerator denominator $T0
+STOREF $T0 fraction
+MULF fraction 100 $T1
+STOREF $T1 percent
+WRITEF percent
+WRITES newl
+READF c
+MULF 3.14159 c $T0
+STOREF $T0 a
+MULF a c $T1
+STOREF $T1 b
+WRITEF b
+WRITES newline
+STOREF 3.14159 PI
+STOREF 200.0 const
+STOREF 180.0 const2
+WRITES c
+WRITES newline
+READF f
+MULF f PI $T0
+STOREF $T0 t1
+DIVF t1 const2 $T1
+STOREF $T1 ra
+DIVF const PI $T2
+STOREF $T2 t2
+MULF ra t2 $T3
+STOREF $T3 g
+WRITES o1
+WRITEF f
+WRITES newline
+WRITES o2
+WRITEF ra
+WRITES newline
+WRITES o3
+WRITEF g
+WRITES newline
+WRITES prompt
+READF m
+STOREF 2.237 factor
+MULF m factor $T0
+STOREF $T0 mph
+WRITES outputLn
+WRITEF mph
+WRITES equal
+WRITEF m
+WRITES mult
+WRITEF factor
+WRITES newline
+READF input
+STOREF 1.0408423 factor
+DIVF input factor $T0
+STOREF $T0 result
+WRITES messagea
+WRITEF input
+WRITES nl
+WRITES messageb
+WRITEF result
+WRITES nl
+STOREF 9.81 a
+STOREF 1.62 b
+WRITES w
+WRITES newline
+READF c
+DIVF c a $T0
+STOREF $T0 a
+MULF a b $T1
+STOREF $T1 d
+WRITEF d
+WRITES newline
+STOREI 1 a
+STOREI 2 b
+READI c
+READI d
+MULI a c $T0
+STOREI $T0 e
+MULI b d $T1
+STOREI $T1 f
+ADDI e f $T2
+STOREI $T2 e
+WRITEI c
+WRITES newline
+WRITEI d
+WRITES newline
+WRITEI e
+WRITES newline
+STOREI 20 a
+STOREI 30 b
+STOREI 40 c
+SUBI a b $T0
+STOREI $T0 c
+MULI b b $T1
+STOREI $T1 b
+ADDI b a $T2
+STOREI $T2 b
+MULI b a $T3
+STOREI $T3 d
+DIVI d a $T4
+STOREI $T4 a
+WRITEI c
+WRITEI b
+WRITEI a
+STOREF 1.0 x
+STOREF 2.0 y
+STOREF 3.14159 z
+WRITEF x
+WRITES newline
+WRITEF z
+WRITES newline
+WRITEF y
+WRITES newline
+DIVF z 2.0 $T0
+STOREF $T0 x
+DIVF z y $T1
+STOREF $T1 y
+WRITEF x
+WRITES newline
+WRITEF y
+WRITES newline
+ADDF x y $T2
+STOREF $T2 t
+WRITEF t
+WRITES newline
+READF input
+STOREF 1.0408423 factor
+DIVF input factor $T0
+STOREF $T0 result
+WRITES messagea
+WRITEF input
+WRITES nl
+WRITES messageb
+WRITEF result
+WRITES nl

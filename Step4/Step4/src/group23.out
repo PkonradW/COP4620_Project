@@ -1,13 +1,30 @@
-var i
-var c
-var const
+var x
+var y
+var z
+var t
 str newline "\n"
-sys readr i
-move 2.54 r0
-move r0 const
-move i r1
-muli const r1
-move r1 c
-sys writer c
+move 1.0 x
+move 2.0 y
+move 3.14159 z
+sys writer x
+sys writes newline
+sys writer z
+sys writes newline
+sys writer y
+sys writes newline
+move z r0
+divr 2.0 r0
+move r0 x
+move z r1
+divr y r1
+move r1 y
+sys writer x
+sys writes newline
+sys writer y
+sys writes newline
+move x r2
+addr y r2
+move r2 t
+sys writer t
 sys writes newline
 sys halt

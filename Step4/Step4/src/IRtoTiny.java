@@ -8,25 +8,7 @@ public class IRtoTiny {
     static int savedReg;
     public static ArrayList<String> tinyList = new ArrayList<>(); // final product
 
-    public static void symbolDump(ArrayList<SymbolTable> allTehSymbols) {
-        for (SymbolTable table : allTehSymbols) {
-            Symbol symbol;
-            Set symbolSet = table.table.entrySet();
-            Iterator i = symbolSet.iterator();
-            while (i.hasNext()) {
-                Map.Entry entry = (Map.Entry) i.next();
-                String key = (String) entry.getKey();
-                symbol = table.table.get(key);
-                if (symbol != null) {
-                    if (symbol.getValue() != null) {
-                        tinyList.add("str " + symbol.getName() + " " + symbol.getValue());
-                    } else {
-                        tinyList.add("var " + symbol.getName());
-                    }
-                }
-            }
-        }
-    }
+
     public static void process(ArrayList<String> codeList) {
 
         for (String line : codeList) {
@@ -110,6 +92,25 @@ public class IRtoTiny {
                 break;
             default:
                 tinyList.add(";code's broken");
+        }
+    }
+    public static void symbolDump(ArrayList<SymbolTable> allTehSymbols) {
+        for (SymbolTable table : allTehSymbols) {
+            Symbol symbol;
+            Set symbolSet = table.table.entrySet();
+            Iterator i = symbolSet.iterator();
+            while (i.hasNext()) {
+                Map.Entry entry = (Map.Entry) i.next();
+                String key = (String) entry.getKey();
+                symbol = table.table.get(key);
+                if (symbol != null) {
+                    if (symbol.getValue() != null) {
+                        tinyList.add("str " + symbol.getName() + " " + symbol.getValue());
+                    } else {
+                        tinyList.add("var " + symbol.getName());
+                    }
+                }
+            }
         }
     }
     public static void makeTinyFile() {

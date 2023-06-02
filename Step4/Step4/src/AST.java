@@ -117,7 +117,7 @@ public class AST {
     }
 public static void irPrint(ASTnode head) {
     try {
-        FileWriter fileWriter = new FileWriter("testicle.out", true);
+        FileWriter fileWriter = new FileWriter("IRCode.out", true);
         PrintWriter printWriter = new PrintWriter(fileWriter);
 
         if (head.lChild != null) {

@@ -3,7 +3,7 @@ BEGIN
     STRING greeting := "Hello, welcome to horsepower to horse converter.";
     STRING inputPrompt := "Please input horsepower:";
     STRING nl := "\n";
-    INT horsePower;
+    FLOAT horsePower;
     FLOAT horses;
     STRING withString := "With ";
     STRING horsePowerString := " horsepower, you have ";

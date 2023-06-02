@@ -1,6 +1,0 @@
-READF i
-STOREF 2.54 const
-MULF i const $T0
-STOREF $T0 c
-WRITEF c
-WRITES newline

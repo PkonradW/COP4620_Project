@@ -44,7 +44,7 @@ public class Driver {
             }
             IRtoTiny.symbolDump(stb.tableList);
             IRtoTiny.process(AST.codelist);
-            IRtoTiny.makeTinyFile();
+            //IRtoTiny.makeTinyFile();
             for (String line :
                     IRtoTiny.tinyList) {
                 System.out.println(line);
